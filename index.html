@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hose Client | Beta 1.7.3</title>
+    <style>
+        :root {
+            --primary: #ff4747;
+            --bg: #0b0b0b;
+            --card-bg: #141414;
+            --text-main: #e0e0e0;
+            --text-dim: #888;
+            --accent: #222;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        header {
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: radial-gradient(circle at center, #1a0a0a 0%, #0b0b0b 100%);
+            border-bottom: 3px solid var(--primary);
+            text-align: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            font-size: 5rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: 5px;
+        }
+
+        /* Replace logo.png with your actual nozzle image filename */
+        .logo-img {
+            height: 90px;
+            margin: 0 10px;
+        }
+
+        .tagline {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--accent);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary);
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .module-list {
+            list-style: none;
+            padding: 0;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .module-list li {
+            padding: 4px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .status-tag {
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            float: right;
+            text-transform: uppercase;
+        }
+
+        .wip { background: #8b6e15; color: white; }
+        .patched { background: #444; color: #888; text-decoration: line-through; }
+
+        .dev-note {
+            background: #1a1010;
+            border: 1px solid var(--primary);
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 8px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--accent);
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            H<img src="logo.png" alt="O" class="logo-img">se
+        </div>
+        <p class="tagline">The complete utility suite for Minecraft Beta 1.7.3</p>
+    </header>
+
+    <div class="container">
+        
+        <div class="grid">
+            <div class="card">
+                <h3>Client & Misc</h3>
+                <ul class="module-list">
+                    <li>Background, ClickGUI, Hud</li>
+                    <li>IRC, DiscordRPC</li>
+                    <li>AutoEat, AutoCaptcha</li>
+                    <li>AutoReconnect, Spammer</li>
+                    <li>TcpNoDelay, Timer</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Combat</h3>
+                <ul class="module-list">
+                    <li>Aura (Multi-target)</li>
+                    <li>Velocity</li>
+                    <li>Reach</li>
+                    <li>Criticals</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Movement</h3>
+                <ul class="module-list">
+                    <li>BoatFly <span class="status-tag wip">WIP / Buggy</span></li>
+                    <li>Flight, NoClip, Speed</li>
+                    <li>Jesus, Spider, Step</li>
+                    <li>NoFall, Scaffold, Yaw</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Exploits</h3>
+                <ul class="module-list">
+                    <li>PacketMine, Instamine</li>
+                    <li>InfiniteSign, Nuker</li>
+                    <li>NewChunks, Lawnmower</li>
+                    <li>FastPortal, PacketLogger</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Render</h3>
+                <ul class="module-list">
+                    <li>FullBright, Xray, ESP</li>
+                    <li>Tracers, NameTags</li>
+                    <li>NoOverlay, NoRender</li>
+                    <li>Freecam, FOV</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Dupes</h3>
+                <ul class="module-list">
+                    <li class="patched">ChestDupe (Patched)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="dev-note">
+            <strong>Developer Status:</strong> Currently investigating <b>BoatFly</b> logic for Beta 1.7.3 server wrappers. <b>ChestDupe</b> has been deprecated due to server-side container patches.
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Gund4422 Development. <br>
+        Built for the Golden Age Minecraft Community.
+    </footer>
+
+</body>
+</html>
