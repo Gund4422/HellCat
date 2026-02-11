@@ -3,54 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hose Client | Beta 1.7.3</title>
+    <title>Hellcat Client | Beta 1.7.3</title>
     <style>
         :root {
-            --primary: #ff4747;
-            --bg: #0b0b0b;
-            --card-bg: #141414;
-            --text-main: #e0e0e0;
-            --text-dim: #888;
-            --accent: #222;
+            --primary: #ff6a00; /* Hellcat Charger Orange */
+            --bg: #080808;
+            --card-bg: #121212;
+            --text: #f5f5f5;
+            --dim: #777;
         }
 
         body {
             background-color: var(--bg);
-            color: var(--text-main);
-            font-family: 'Segoe UI', Tahoma, sans-serif;
+            color: var(--text);
+            font-family: 'Segoe UI', Impact, sans-serif;
             margin: 0;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         header {
-            height: 60vh;
+            height: 65vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: radial-gradient(circle at center, #1a0a0a 0%, #0b0b0b 100%);
-            border-bottom: 3px solid var(--primary);
+            /* Using your SRT Hellcat reference image for the background */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('12.jpg');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 5px solid var(--primary);
             text-align: center;
         }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            font-size: 5rem;
+        .logo {
+            font-size: 7rem;
             font-weight: 900;
             color: var(--primary);
-            letter-spacing: 5px;
-        }
-
-        /* Replace logo.png with your actual nozzle image filename */
-        .logo-img {
-            height: 90px;
-            margin: 0 10px;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            font-style: italic;
+            margin: 0;
+            filter: drop-shadow(0 0 20px rgba(255, 106, 0, 0.4));
         }
 
         .tagline {
-            color: var(--text-dim);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: white;
+            text-transform: uppercase;
+            background: rgba(0,0,0,0.7);
+            padding: 5px 30px;
             margin-top: 10px;
         }
 
@@ -69,137 +71,125 @@
         .card {
             background: var(--card-bg);
             padding: 25px;
-            border-radius: 8px;
-            border: 1px solid var(--accent);
+            border: 1px solid #222;
+            border-top: 3px solid var(--primary);
         }
 
         .card h3 {
-            margin-top: 0;
+            margin: 0 0 15px 0;
             color: var(--primary);
-            border-bottom: 1px solid var(--accent);
-            padding-bottom: 10px;
-            font-size: 1.4rem;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
         }
 
         .module-list {
             list-style: none;
             padding: 0;
-            font-size: 0.9rem;
-            color: var(--text-dim);
+            margin: 0;
+            font-family: 'Consolas', monospace;
+            font-size: 0.85rem;
+            color: var(--dim);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
 
         .module-list li {
-            padding: 4px 0;
-            border-bottom: 1px solid #1a1a1a;
+            padding: 3px 0;
         }
 
-        .status-tag {
-            font-size: 0.7rem;
+        .status-pill {
+            font-size: 0.65rem;
             padding: 2px 6px;
-            border-radius: 4px;
-            float: right;
-            text-transform: uppercase;
-        }
-
-        .wip { background: #8b6e15; color: white; }
-        .patched { background: #444; color: #888; text-decoration: line-through; }
-
-        .dev-note {
-            background: #1a1010;
             border: 1px solid var(--primary);
-            padding: 20px;
-            margin-top: 40px;
-            border-radius: 8px;
+            color: var(--primary);
+            float: right;
+            font-family: sans-serif;
+            font-style: normal;
         }
 
         footer {
             text-align: center;
-            padding: 40px;
-            border-top: 1px solid var(--accent);
-            color: #555;
+            padding: 50px;
+            color: #333;
+            border-top: 1px solid #1a1a1a;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo-container">
-            H<img src="logo.png" alt="O" class="logo-img">se
-        </div>
-        <p class="tagline">The complete utility suite for Minecraft Beta 1.7.3</p>
+        <h1 class="logo">Hellcat</h1>
+        <p class="tagline">Supercharged for Beta 1.7.3</p>
     </header>
 
     <div class="container">
-        
         <div class="grid">
-            <div class="card">
-                <h3>Client & Misc</h3>
-                <ul class="module-list">
-                    <li>Background, ClickGUI, Hud</li>
-                    <li>IRC, DiscordRPC</li>
-                    <li>AutoEat, AutoCaptcha</li>
-                    <li>AutoReconnect, Spammer</li>
-                    <li>TcpNoDelay, Timer</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h3>Combat</h3>
-                <ul class="module-list">
-                    <li>Aura (Multi-target)</li>
-                    <li>Velocity</li>
-                    <li>Reach</li>
-                    <li>Criticals</li>
-                </ul>
-            </div>
-
             <div class="card">
                 <h3>Movement</h3>
                 <ul class="module-list">
-                    <li>BoatFly <span class="status-tag wip">WIP / Buggy</span></li>
-                    <li>Flight, NoClip, Speed</li>
-                    <li>Jesus, Spider, Step</li>
-                    <li>NoFall, Scaffold, Yaw</li>
+                    <li>AutoWalk</li><li>FastStop</li>
+                    <li>Flight</li><li>Freecam</li>
+                    <li>BlockSpeed</li><li>GuiMove</li>
+                    <li>Jesus</li><li>NoClip</li>
+                    <li>NoFall</li><li>NoRotate</li>
+                    <li>Scaffold</li><li>Speed</li>
+                    <li>Stop</li><li>Velocity</li>
+                    <li>Yaw</li>
                 </ul>
             </div>
 
             <div class="card">
-                <h3>Exploits</h3>
+                <h3>Exploit</h3>
                 <ul class="module-list">
-                    <li>PacketMine, Instamine</li>
-                    <li>InfiniteSign, Nuker</li>
-                    <li>NewChunks, Lawnmower</li>
-                    <li>FastPortal, PacketLogger</li>
+                    <li>BoatFly</li><li>FastPortal</li>
+                    <li>InfDurability</li><li>InfiniteSign</li>
+                    <li>Instamine</li><li>Lawnmower</li>
+                    <li>NewChunks</li><li>Nuker</li>
+                    <li>PacketLogger</li><li>PacketMine</li>
+                    <li>Sneak</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Misc</h3>
+                <ul class="module-list">
+                    <li>AutoCaptcha</li><li>AutoEat</li>
+                    <li>AutoReconnect</li><li>AutoSign</li>
+                    <li>AutoTNT</li><li>DiscordRPC</li>
+                    <li>FastPlace</li><li>InventoryTweaks</li>
+                    <li>MCF</li><li>Portals</li>
+                    <li>Retard</li><li>Spammer</li>
+                    <li>TcpNoDelay</li><li>Timer</li>
+                    <li>VisualRange</li>
                 </ul>
             </div>
 
             <div class="card">
                 <h3>Render</h3>
                 <ul class="module-list">
-                    <li>FullBright, Xray, ESP</li>
-                    <li>Tracers, NameTags</li>
-                    <li>NoOverlay, NoRender</li>
-                    <li>Freecam, FOV</li>
+                    <li>CameraTweaks</li><li>ESP</li>
+                    <li>FOV</li><li>FullBright</li>
+                    <li>NameTags</li><li>NoOverlay</li>
+                    <li>NoRender</li><li>Xray</li>
                 </ul>
             </div>
 
             <div class="card">
-                <h3>Dupes</h3>
+                <h3>System</h3>
                 <ul class="module-list">
-                    <li class="patched">ChestDupe (Patched)</li>
+                    <li>Background</li><li>ClickGUI</li>
+                    <li>HideLogin</li><li>Hud</li>
+                    <li>IRC</li><li>MainMenu</li>
+                    <li>ToggleMsg</li>
+                    <li>ChestDupe <span class="status-pill">PATCHED</span></li>
                 </ul>
             </div>
         </div>
-
-        <div class="dev-note">
-            <strong>Developer Status:</strong> Currently investigating <b>BoatFly</b> logic for Beta 1.7.3 server wrappers. <b>ChestDupe</b> has been deprecated due to server-side container patches.
-        </div>
-
     </div>
 
     <footer>
-        &copy; 2026 Gund4422 Development. <br>
-        Built for the Golden Age Minecraft Community.
+        &copy; 2026 Gund4422 Development. Built for the Redline.
     </footer>
 
 </body>
